@@ -2,10 +2,23 @@
 
 #include "Character/AuraCharacter.h"
 
+#include "Camera/CameraComponent.h"
+#include "GameFramework/SpringArmComponent.h"
+
 AAuraCharacter::AAuraCharacter()
 {
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
+	
+	CameraBoom=CreateDefaultSubobject<USpringArmComponent>("CameraBoom");
+	CameraBoom->TargetArmLength=500.f;
+	CameraBoom->SetupAttachment(GetRootComponent());
+	
+	FollowCamera=CreateDefaultSubobject<UCameraComponent>("FollowCamera");
+	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 }
+
+
+
 
 void AAuraCharacter::BeginPlay()
 {

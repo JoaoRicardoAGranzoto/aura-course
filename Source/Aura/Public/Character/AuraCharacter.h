@@ -22,4 +22,10 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Character View")
+	TObjectPtr<class USpringArmComponent> CameraBoom;
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Character View")
+	TObjectPtr<class UCameraComponent> FollowCamera;
 };

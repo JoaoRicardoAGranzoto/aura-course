@@ -20,4 +20,7 @@ protected:
 
 
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combat")
+	TObjectPtr<class USkeletalMeshComponent> Weapon;
+
 };
