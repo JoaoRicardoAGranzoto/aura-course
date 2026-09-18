@@ -1,20 +1,20 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
-#include "Animation/AuraBaseAnimInstance.h"
-#include "Character/AuraCharacterBase.h"
+#include "Animation/EnemyAnimInstance.h"
+#include "Character/AuraEnemy.h"
 
-void UAuraBaseAnimInstance::NativeInitializeAnimation()
+void UEnemyAnimInstance::NativeInitializeAnimation()
 {
 	Super::NativeInitializeAnimation();
 	
-	CharacterBase=Cast<AAuraCharacterBase>(TryGetPawnOwner());
+	CharacterBase=Cast<AAuraEnemy>(TryGetPawnOwner());
 	if (CharacterBase)
 	{
 		MovementComponent=CharacterBase->GetCharacterMovement();
 	}
 }
 
-void UAuraBaseAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
+void UEnemyAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 {
 	
 	

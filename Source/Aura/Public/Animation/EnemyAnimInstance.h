@@ -4,10 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "Animation/AnimInstance.h"
-#include "AuraBaseAnimInstance.generated.h"
+#include "EnemyAnimInstance.generated.h"
 
 UCLASS()
-class AURA_API UAuraBaseAnimInstance : public UAnimInstance
+class AURA_API UEnemyAnimInstance : public UAnimInstance
 {
 	GENERATED_BODY()
 	
@@ -24,7 +24,7 @@ protected:
 	float Speed;
 	
 	UPROPERTY()
-	TObjectPtr<class AAuraCharacterBase> CharacterBase;
+	TObjectPtr<class AAuraEnemy> CharacterBase;
 	
 	UPROPERTY()
 	TObjectPtr<class UCharacterMovementComponent> MovementComponent;

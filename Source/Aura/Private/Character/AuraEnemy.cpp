@@ -4,23 +4,15 @@
 
 AAuraEnemy::AAuraEnemy()
 {
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
 }
 
-void AAuraEnemy::BeginPlay()
+void AAuraEnemy::HighlightActor()
 {
-	Super::BeginPlay();
+	bIsHighlighted = true;
 }
 
-void AAuraEnemy::Tick(float DeltaTime)
+void AAuraEnemy::UnHighlightActor()
 {
-	Super::Tick(DeltaTime);
-}
-
-
-
-
-void AAuraEnemy::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
-{
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
+	bIsHighlighted = false;
 }
